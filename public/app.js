@@ -3,10 +3,10 @@ $.getJSON("/articles", function (data) {
     // For each one
     for (var i = 0; i < data.length; i++) {
         // Display the apropos information on the page
-        $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+        $("#articles").prepend("<p class='headline' data-id='" + data[i]._id + "'>" + data[i].title + "</p>");
+        $("#articles").prepend("<span>" + data[i].link + "</span>");
     }
 });
-
 
 // Whenever someone clicks a p tag
 $(document).on("click", "p", function () {
