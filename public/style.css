@@ -1,11 +1,23 @@
+.header-wrapper {
+    text-align: center;
+    padding: 2%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
 .page-wrapper {
     display: flex;
     justify-content: center;
 }
 
+#articles {
+    margin-left: 5%;
+}
+
 #notes {
     display: flex;
     flex-direction: column;
+    margin-left: 10%;
 }
 
 #titleinput,
@@ -19,9 +31,21 @@
     height: 250px;
 }
 
-#savenote {
+#savenote,
+#scrapeButton {
     padding: 2%;
     width: 25%;
     background-color: black;
     color: white;
 }
+
+.headline {
+    font-size: 1.2rem;
+    margin-top: 10%;
+}
+
+.headline:hover {
+    font-size: 1.25rem;
+}
+
+
