@@ -1,12 +1,18 @@
-// Grab the articles as a json
-$.getJSON("/articles", function (data) {
-    // For each one
-    for (var i = 0; i < data.length; i++) {
-        // Display the apropos information on the page
-        $("#articles").prepend("<span class='article-link'>" + data[i].link + "</span>");
-        $("#articles").prepend("<p class='headline' data-id='" + data[i]._id + "'>" + data[i].title + "</p>");
-    }
-});
+
+$("#scrapeButton").on("click", function() {
+    $.get("/scrape", function(data) {
+        console.log(`This function is pulling in from 'res.send': ${data}`);
+    })
+
+    $.getJSON("/articles", function (data) {
+        // For each one
+        for (var i = 0; i < data.length; i++) {
+            // Display the apropos information on the page
+            $("#articles").prepend(`<span class='article-link'><a href='${data[i].link}' target='_blank'>${data[i].link}</a></span>`);
+            $("#articles").prepend("<p class='headline' data-id='" + data[i]._id + "'>" + data[i].title + "</p>");
+        }
+    });
+})
 
 // Whenever someone clicks a p tag
 $(document).on("click", "p", function () {
@@ -70,3 +76,5 @@ $(document).on("click", "#savenote", function () {
     $("#titleinput").val("");
     $("#bodyinput").val("");
 });
+
+

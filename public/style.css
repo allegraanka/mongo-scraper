@@ -41,8 +41,11 @@
 
 .headline {
     font-size: 1.2rem;
+    margin-top: 10%;
 }
 
 .headline:hover {
     font-size: 1.25rem;
 }
+
+
