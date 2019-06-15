@@ -1,0 +1,27 @@
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+#notes {
+    display: flex;
+    flex-direction: column;
+}
+
+#titleinput,
+#bodyinput {
+    padding: 1%;
+    margin-bottom: 1%;
+    width: 50%;
+}
+
+#bodyinput {
+    height: 250px;
+}
+
+#savenote {
+    padding: 2%;
+    width: 25%;
+    background-color: black;
+    color: white;
+}
