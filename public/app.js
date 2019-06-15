@@ -3,7 +3,7 @@ $.getJSON("/articles", function (data) {
     // For each one
     for (var i = 0; i < data.length; i++) {
         // Display the apropos information on the page
-        $("#articles").prepend("<span>" + data[i].link + "</span>");
+        $("#articles").prepend("<span class='article-link'>" + data[i].link + "</span>");
         $("#articles").prepend("<p class='headline' data-id='" + data[i]._id + "'>" + data[i].title + "</p>");
     }
 });
@@ -24,7 +24,7 @@ $(document).on("click", "p", function () {
         .then(function (data) {
             console.log(data);
             // The title of the article
-            $("#notes").append("<h2>" + data.title + "</h2>");
+            $("#notes").append("<h2 class='notes-header'>" + data.title + "</h2>");
             // An input to enter a new title
             $("#notes").append("<input id='titleinput' name='title' placeholder='Enter title'>");
             // A textarea to add a new note body
