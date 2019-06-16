@@ -8,7 +8,7 @@ var app = express();
 
 var db = require("./models");
 
-var port = process.env.port || 3500;
+var PORT = process.env.PORT || 3500;
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
@@ -95,6 +95,6 @@ app.post("/articles/:id", function (req, res) {
         });
 });
 
-app.listen(port, function() {
-    console.log(`Listening on port: ${port}`);
+app.listen(PORT, function() {
+    console.log(`Listening on port: ${PORT}`);
 });
